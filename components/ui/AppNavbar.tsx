@@ -7,7 +7,7 @@ import { RiMenuFold2Line, RiMenuFoldLine } from "react-icons/ri";
 
 export function AppNavbar({onChangeCollapsed, isCollapsed}:{onChangeCollapsed:()=>void, isCollapsed:boolean}) {
   return (
-    <Navbar fluid className={`fixed top-0 end-0 ${isCollapsed ? 'left-16' : 'left-64'} border-b border-gray-700 transition-all duration-500`}>
+    <Navbar fluid className={`fixed top-0 end-0 ${isCollapsed ? 'left-16' : 'left-64'} border-b border-gray-300 transition-all duration-500`}>
      <div className="flex justify-between w-full h-16 items-center align-middle">
        <NavbarBrand className="gap-3">
        {!isCollapsed ?  <RiMenuFoldLine size={25} onClick={onChangeCollapsed} className="cursor-pointer"/> :
