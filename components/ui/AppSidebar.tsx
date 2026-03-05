@@ -9,10 +9,10 @@ import SidebarItemCustomise from "./SidebarItemCustomise";
 
 export function AppSidebar({isCollapsed}:{isCollapsed:boolean}) {
   return (
-    <div className={`${isCollapsed ? 'w-16' : 'w-64'} fixed left-0 top-0 h-screen flex flex-col transition-all duration-500 border-r dark:bg-background border-gray-700`}>
-       <div className="py-3 border-b border-gray-700 bg-white">
+    <div className={`${isCollapsed ? 'w-16' : 'w-64'} fixed left-0 top-0 h-screen flex flex-col transition-all duration-500 border-r dark:bg-background border-gray-300`}>
+       <div className="py-3 border-b border-gray-300 bg-white">
           <div className="flex justify-center items-center gap-1 ">
-                    <Image src={"/img/logo.jpg"} alt={""} 
+                    <Image src={"/favicon.svg"} alt={""} 
                     width={60}
                     height={60}
                     priority
