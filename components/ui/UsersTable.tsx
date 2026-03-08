@@ -62,7 +62,6 @@ export default function UsersTable({
         </table>
       </div>
       
-      {/* Composant de pagination intégré (ou séparable) */}
       <div className="border-t border-gray-100 p-4 px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm">
         <span className="text-[#ff00ff]/70 font-medium text-center sm:text-left">
           Affichage de {totalItems === 0 ? 0 : startIndex + 1} à {Math.min(startIndex + itemsPerPage, totalItems)} sur {totalItems} agents

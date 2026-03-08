@@ -19,7 +19,6 @@ export default function UsersHeader({ onAddClick }: any) {
           </p>
         </div>
         
-        {/* On lie le clic à la prop reçue */}
         <button 
           onClick={onAddClick}
           className="flex items-center justify-center gap-2 bg-[#ff00ff] hover:bg-[#d600d6] text-white px-6 py-3 rounded-xl font-bold transition-all shadow-lg shadow-[#ff00ff]/25 active:scale-95"

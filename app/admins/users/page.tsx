@@ -2,8 +2,6 @@
 
 import React, { useState, useMemo, useEffect } from 'react';
 import { allAgents, stats } from '@/data/mock';
-
-// Import de tous tes nouveaux composants
 import UsersHeader from '@/components/ui/UsersHeader'
 import Filters from '@/components/ui/Filters';
 import AgentsTable from '@/components/ui/UsersTable';
@@ -18,10 +16,8 @@ export default function AgentsPage() {
   const [roleFilter, setRoleFilter] = useState('Tous les rôles');
   const [deptFilter, setDeptFilter] = useState('Tous les départements');
   const [currentPage, setCurrentPage] = useState(1);
-  // État pour contrôler la visibilité du modal
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // Logique de filtrage (inchangée)
   const filteredAgents = useMemo(() => {
     return allAgents.filter(agent => {
       const matchesSearch = agent.name.toLowerCase().includes(searchTerm.toLowerCase()) || 

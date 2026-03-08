@@ -8,7 +8,6 @@ export default function Filters({
   return (
     <div className="bg-white p-4 rounded-2xl shadow-sm flex flex-col lg:flex-row gap-4 mb-8 items-center">
       
-      {/* Champ de recherche standard */}
       <div className="flex-1 flex items-center bg-[#ff00ff]/5 rounded-xl px-4 w-full">
         <Search className="text-[#ff00ff]/50 shrink-0" size={20} />
         <input 
@@ -20,7 +19,6 @@ export default function Filters({
         />
       </div>
 
-      {/* Selects standards (Le navigateur gère la flèche et l'ouverture) */}
       <select 
         value={roleFilter}
         onChange={(e) => setRoleFilter(e.target.value)}

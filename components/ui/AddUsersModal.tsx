@@ -5,10 +5,7 @@ export default function AddUsersModal({ isOpen, onClose }: any) {
 
   return (
     <div className="fixed inset-0 z-100 flex items-center justify-center bg-black/40 backdrop-blur-sm p-4">
-      {/* Conteneur du Modal */}
       <div className="bg-white w-full max-w-lg rounded-4xl shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-200">
-        
-        {/* Header du Modal */}
         <div className="p-8 pb-0 flex justify-between items-start">
           <div>
             <h2 className="text-2xl font-black text-gray-900">Ajouter un nouvel agent</h2>
@@ -19,10 +16,8 @@ export default function AddUsersModal({ isOpen, onClose }: any) {
           </button>
         </div>
 
-        {/* Formulaire */}
         <form className="p-8 space-y-5" onSubmit={(e) => e.preventDefault()}>
           
-          {/* Nom complet */}
           <div className="space-y-2">
             <label className="text-sm font-bold text-gray-700 ml-1">Nom complet</label>
             <div className="flex items-center bg-[#ff00ff]/5 rounded-xl px-4 focus-within:ring-2 focus-within:ring-[#ff00ff]/20 transition-all">
@@ -31,7 +26,6 @@ export default function AddUsersModal({ isOpen, onClose }: any) {
             </div>
           </div>
 
-          {/* Email */}
           <div className="space-y-2">
             <label className="text-sm font-bold text-gray-700 ml-1">Adresse e-mail institutionnelle</label>
             <div className="flex items-center bg-[#ff00ff]/5 rounded-xl px-4 focus-within:ring-2 focus-within:ring-[#ff00ff]/20 transition-all">
@@ -40,7 +34,6 @@ export default function AddUsersModal({ isOpen, onClose }: any) {
             </div>
           </div>
 
-          {/* Rôle et Département (Grid) */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="space-y-2">
               <label className="text-sm font-bold text-gray-700 ml-1">Rôle</label>
@@ -67,7 +60,6 @@ export default function AddUsersModal({ isOpen, onClose }: any) {
             </div>
           </div>
 
-          {/* Matricule */}
           <div className="space-y-2">
             <label className="text-sm font-bold text-gray-700 ml-1">Matricule / ID Agent</label>
             <div className="flex items-center bg-[#ff00ff]/5 rounded-xl px-4 focus-within:ring-2 focus-within:ring-[#ff00ff]/20 transition-all">
@@ -76,7 +68,6 @@ export default function AddUsersModal({ isOpen, onClose }: any) {
             </div>
           </div>
 
-          {/* Toggle Envoyer Identifiants */}
           <div className="flex items-center justify-between bg-[#ff00ff]/5 p-4 rounded-2xl">
             <div className="flex items-center gap-3">
               <Key size={18} className="text-[#ff00ff]" />
@@ -88,7 +79,6 @@ export default function AddUsersModal({ isOpen, onClose }: any) {
             </label>
           </div>
 
-          {/* Footer Actions */}
           <div className="flex items-center justify-end gap-6 pt-4">
             <button type="button" onClick={onClose} className="text-sm font-black text-gray-900 uppercase tracking-widest hover:opacity-70 transition-opacity">
               Annuler

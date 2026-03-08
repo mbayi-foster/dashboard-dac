@@ -10,7 +10,6 @@ export default function StatsGrid({ stats }: any) {
             key={idx} 
             className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex items-center gap-5 hover:shadow-md transition-shadow"
           >
-            {/* Icône sans positionnement absolu */}
             <div className={`w-14 h-14 rounded-2xl flex items-center justify-center shrink-0 ${stat.bg} ${stat.color}`}>
               <Icon size={28} />
             </div>
