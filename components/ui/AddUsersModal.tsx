@@ -1,11 +1,18 @@
 import { X, User, Mail, Briefcase, Building2, Fingerprint, Key, ArrowRight } from 'lucide-react';
 
-export default function AddUsersModal({ isOpen, onClose }: any) {
+export default function AddAgentModal({ isOpen, onClose }: any) {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-100 flex items-center justify-center bg-black/40 backdrop-blur-sm p-4">
-      <div className="bg-white w-full max-w-lg rounded-4xl shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-200">
+    <div 
+      className="fixed inset-0 z-100 flex items-center justify-center bg-black/40 backdrop-blur-sm p-4"
+      onClick={onClose}
+    >
+      <div 
+        className="bg-white w-full max-w-lg rounded-4xl shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-200"
+        onClick={(e) => e.stopPropagation()} 
+      >
+        
         <div className="p-8 pb-0 flex justify-between items-start">
           <div>
             <h2 className="text-2xl font-black text-gray-900">Ajouter un nouvel agent</h2>
@@ -20,17 +27,25 @@ export default function AddUsersModal({ isOpen, onClose }: any) {
           
           <div className="space-y-2">
             <label className="text-sm font-bold text-gray-700 ml-1">Nom complet</label>
-            <div className="flex items-center bg-[#ff00ff]/5 rounded-xl px-4 focus-within:ring-2 focus-within:ring-[#ff00ff]/20 transition-all">
-              <User size={18} className="text-[#ff00ff]/40" />
-              <input type="text" placeholder="ex: Jean Dupont" className="w-full bg-transparent py-3.5 pl-3 outline-none text-gray-700 placeholder:text-[#ff00ff]/30" />
+            <div className="flex items-center bg-[#ff00ff]/5 rounded-xl px-4 transition-all">
+              <User size={18} className="text-[#ff00ff]/40 shrink-0" />
+              <input 
+                type="text" 
+                placeholder="ex: Jean Dupont" 
+                className="w-full bg-transparent py-3.5 pl-3 outline-none border-none ring-0 focus:ring-0 text-gray-700 placeholder:text-[#ff00ff]/30" 
+              />
             </div>
           </div>
 
           <div className="space-y-2">
             <label className="text-sm font-bold text-gray-700 ml-1">Adresse e-mail institutionnelle</label>
-            <div className="flex items-center bg-[#ff00ff]/5 rounded-xl px-4 focus-within:ring-2 focus-within:ring-[#ff00ff]/20 transition-all">
-              <Mail size={18} className="text-[#ff00ff]/40" />
-              <input type="email" placeholder="nom.prenom@dac.edu" className="w-full bg-transparent py-3.5 pl-3 outline-none text-gray-700 placeholder:text-[#ff00ff]/30" />
+            <div className="flex items-center bg-[#ff00ff]/5 rounded-xl px-4 transition-all">
+              <Mail size={18} className="text-[#ff00ff]/40 shrink-0" />
+              <input 
+                type="email" 
+                placeholder="nom.prenom@dac.edu" 
+                className="w-full bg-transparent py-3.5 pl-3 outline-none border-none ring-0 focus:ring-0 text-gray-700 placeholder:text-[#ff00ff]/30" 
+              />
             </div>
           </div>
 
@@ -38,8 +53,8 @@ export default function AddUsersModal({ isOpen, onClose }: any) {
             <div className="space-y-2">
               <label className="text-sm font-bold text-gray-700 ml-1">Rôle</label>
               <div className="flex items-center bg-[#ff00ff]/5 rounded-xl px-4 transition-all">
-                <Briefcase size={18} className="text-[#ff00ff]/40" />
-                <select className="w-full bg-transparent py-3.5 pl-2 outline-none text-gray-700 cursor-pointer appearance-none">
+                <Briefcase size={18} className="text-[#ff00ff]/40 shrink-0" />
+                <select className="w-full bg-transparent py-3.5 pl-2 outline-none border-none ring-0 focus:ring-0 text-gray-700 cursor-pointer appearance-none">
                   <option>Sélectionner un rôle</option>
                   <option>Professeur</option>
                   <option>Caissier</option>
@@ -50,8 +65,8 @@ export default function AddUsersModal({ isOpen, onClose }: any) {
             <div className="space-y-2">
               <label className="text-sm font-bold text-gray-700 ml-1">Département</label>
               <div className="flex items-center bg-[#ff00ff]/5 rounded-xl px-4 transition-all">
-                <Building2 size={18} className="text-[#ff00ff]/40" />
-                <select className="w-full bg-transparent py-3.5 pl-2 outline-none text-gray-700 cursor-pointer appearance-none">
+                <Building2 size={18} className="text-[#ff00ff]/40 shrink-0" />
+                <select className="w-full bg-transparent py-3.5 pl-2 outline-none border-none ring-0 focus:ring-0 text-gray-700 cursor-pointer appearance-none">
                   <option>Choisir...</option>
                   <option>Informatique</option>
                   <option>Ressources Humaines</option>
@@ -62,9 +77,13 @@ export default function AddUsersModal({ isOpen, onClose }: any) {
 
           <div className="space-y-2">
             <label className="text-sm font-bold text-gray-700 ml-1">Matricule / ID Agent</label>
-            <div className="flex items-center bg-[#ff00ff]/5 rounded-xl px-4 focus-within:ring-2 focus-within:ring-[#ff00ff]/20 transition-all">
-              <Fingerprint size={18} className="text-[#ff00ff]/40" />
-              <input type="text" placeholder="ex: AG-2024-XXX" className="w-full bg-transparent py-3.5 pl-3 outline-none text-gray-700 placeholder:text-[#ff00ff]/30" />
+            <div className="flex items-center bg-[#ff00ff]/5 rounded-xl px-4 transition-all">
+              <Fingerprint size={18} className="text-[#ff00ff]/40 shrink-0" />
+              <input 
+                type="text" 
+                placeholder="ex: AG-2024-XXX" 
+                className="w-full bg-transparent py-3.5 pl-3 outline-none border-none ring-0 focus:ring-0 text-gray-700 placeholder:text-[#ff00ff]/30" 
+              />
             </div>
           </div>
 
@@ -80,10 +99,10 @@ export default function AddUsersModal({ isOpen, onClose }: any) {
           </div>
 
           <div className="flex items-center justify-end gap-6 pt-4">
-            <button type="button" onClick={onClose} className="text-sm font-black text-gray-900 uppercase tracking-widest hover:opacity-70 transition-opacity">
+            <button type="button" onClick={onClose} className="text-sm font-black text-gray-900 uppercase tracking-widest">
               Annuler
             </button>
-            <button type="submit" className="flex items-center gap-2 bg-[#ff00ff] hover:bg-[#d600d6] text-white px-8 py-3.5 rounded-xl font-bold transition-all shadow-lg shadow-[#ff00ff]/25 active:scale-95">
+            <button type="submit" className="flex items-center gap-2 bg-[#ff00ff] text-white px-8 py-3.5 rounded-xl font-bold shadow-lg shadow-[#ff00ff]/25">
               Créer le compte
               <ArrowRight size={18} />
             </button>
