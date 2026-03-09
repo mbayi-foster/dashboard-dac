@@ -6,8 +6,8 @@ import UsersHeader from '@/components/ui/UsersHeader'
 import Filters from '@/components/ui/Filters';
 import AgentsTable from '@/components/ui/UsersTable';
 import StatsGrid from '@/components/ui/StatsGrid';
-import AppLayout from '@/components/ui/AppLayout';
-import AddUsersModal from '@/components/ui/AddUsersModal';
+import AddUsersModal from '@/components/ui/AddUsersModal'; 
+import AppLayout from '@/components/layouts/AppLayout';
 
 const ITEMS_PER_PAGE = 4;
 

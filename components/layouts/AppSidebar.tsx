@@ -3,11 +3,18 @@ import { Sidebar, SidebarItem, SidebarItemGroup, SidebarItems, SidebarLogo } fro
 import Image from "next/image";
 import { useState } from "react";
 import { FaBedPulse } from "react-icons/fa6";
-import { HiChartPie, HiUser, HiShoppingBag, HiArrowSmRight } from "react-icons/hi";
-import { RiMenuFoldLine } from "react-icons/ri";
-import SidebarItemCustomise from "./SidebarItemCustomise";
+import { HiChartPie, HiUser, HiShoppingBag, HiArrowSmRight, HiUsers } from "react-icons/hi";
+import { RiMenuFoldLine } from "react-icons/ri"; 
+import SidebarItemCustomise from "../ui/SidebarItemCustomise";
+import { usePathname } from "next/navigation";
+import { icons } from "lucide-react";
 
-export function AppSidebar({isCollapsed}:{isCollapsed:boolean}) {
+export function AppSidebar({isCollapsed,}:{isCollapsed:boolean}) {
+  const pathname = usePathname()
+  const liens =[
+    {title:"Tableau de bord", link:'/', icon:HiChartPie},
+    {title:"Agents universitaire", link:'/admins/users', icon:HiUsers}
+  ]
   return (
     <div className={`${isCollapsed ? 'w-16' : 'w-64'} fixed left-0 top-0 h-screen flex flex-col transition-all duration-500 border-r dark:bg-background border-gray-300`}>
        <div className="py-3 border-b border-gray-300 bg-white">
@@ -35,8 +42,10 @@ export function AppSidebar({isCollapsed}:{isCollapsed:boolean}) {
         }}>
           <SidebarItems  className="transition-all duration-300 group-hover:bg-secondary">
           <SidebarItemGroup className="justify-center items-center h-full border-t-0 group-hover:bg-secondary">
-            <SidebarItemCustomise label="Tableau de bord"/>
-            <SidebarItemCustomise label="Tableau de bord" isLinked/>
+              {
+                liens.map((l)=>
+            <SidebarItemCustomise icon={l.icon} href={l.link} label={l.title} isLinked={pathname==l.link}/>)
+              }
              </SidebarItemGroup>
       </SidebarItems>
      </Sidebar>

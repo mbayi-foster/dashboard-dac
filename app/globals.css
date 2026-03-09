@@ -35,6 +35,7 @@ body {
 @theme {
   --color-primary: #ff00f6;
   --color-secondary: #35a0fb;
+  --color-hover: #d600d6;
   --color-success: #22c55e;
 }
 
