@@ -5,28 +5,28 @@
 @source "../.flowbite-react/class-list.json";
 
 @plugin "flowbite/plugin";
-@plugin "@tailwindcss/forms";
+/*@plugin "@tailwindcss/forms";*/
 @source "../node_modules/flowbite-react/dist/esm/**/*.mjs";
 
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --background: #ededed;
-  --foreground: #0a0a0a;
+    --background: #ededed;
+    --foreground: #0a0a0a;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --font-sans: var(--font-geist-sans);
+    --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #ededed;
-    --foreground: #0a0a0a;
-  }
+    :root {
+        --background: #ededed;
+        --foreground: #0a0a0a;
+    }
 }
 
 /* body {
@@ -36,40 +36,40 @@
 } */
 
 body {
-  font-family: "Inter", sans-serif;
+    font-family: "Inter", sans-serif;
 }
 .material-symbols-outlined {
-  font-variation-settings:
-    "FILL" 0,
-    "wght" 400,
-    "GRAD" 0,
-    "opsz" 24;
+    font-variation-settings:
+        "FILL" 0,
+        "wght" 400,
+        "GRAD" 0,
+        "opsz" 24;
 }
 .bg-primary-gradient {
-  background: linear-gradient(135deg, #0057bd 0%, #6e9fff 100%);
+    background: linear-gradient(135deg, #0057bd 0%, #6e9fff 100%);
 }
 
 @theme {
-  --color-primary: #ff00f6;
-  --color-secondary: #35a0fb;
-  --color-hover: #d600d6;
-  --color-success: #22c55e;
+    --color-primary: #ff00f6;
+    --color-secondary: #35a0fb;
+    --color-hover: #d600d6;
+    --color-success: #22c55e;
 }
 
 /* Style pour une scrollbar discrète */
 .sidebar-scroll::-webkit-scrollbar {
-  width: 5px;
+    width: 5px;
 }
 
 .sidebar-scroll::-webkit-scrollbar-track {
-  background: transparent;
+    background: transparent;
 }
 
 .sidebar-scroll::-webkit-scrollbar-thumb {
-  background: #e5e7eb; /* Gris clair Flowbite */
-  border-radius: 10px;
+    background: #e5e7eb; /* Gris clair Flowbite */
+    border-radius: 10px;
 }
 
 .sidebar-scroll::-webkit-scrollbar-thumb:hover {
-  background: #d1d5db;
+    background: #d1d5db;
 }
