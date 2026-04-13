@@ -1,10 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import {
-  Calendar,
-  dateFnsLocalizer,
-  Event as CalendarEvent,
-} from "react-big-calendar";
+import { Calendar, dateFnsLocalizer, Event as CalendarEvent } from "react-big-calendar";
 import { format, parse, startOfWeek, getDay } from "date-fns";
 import { fr } from "date-fns/locale";
 
@@ -147,16 +143,19 @@ const CustomEvent = ({ event }: { event: DACEvent }) => {
 export default function PageEmploiTemps() {
   const [view, setView] = useState<"week" | "day">("week");
   const [date, setDate] = useState(BASE_DATE);
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
+    if (typeof window !== "undefined") {
+      setIsMobile(window.innerWidth < 768);
+    }
     const handleResize = () => setIsMobile(window.innerWidth < 768);
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   return (
-    <AppLayout>
+    <AppLayout title={""} subtitle={""}>
       <main className="flex-1 overflow-y-auto p-6 md:p-8 flex flex-col">
         <div className="bg-white rounded-2xl border border-slate-200 shadow-sm flex-1 flex flex-col overflow-hidden p-4">
           <style>{`

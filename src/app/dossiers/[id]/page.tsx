@@ -10,8 +10,7 @@ import {
 export default function DossierDetailsPage({ params }: { params: { id: string } }) {
   
   return (
-    <AppLayout 
-      // pageTitle="Détails du Dossier - #DAC-2024-001" 
+    <AppLayout title={''} subtitle={''}      // pageTitle="Détails du Dossier - #DAC-2024-001" 
       // subtitle="Dossiers Étudiants > Détails du Dossier"
     >
       <div className="flex flex-col lg:flex-row gap-8">

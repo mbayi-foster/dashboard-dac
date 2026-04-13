@@ -6,7 +6,7 @@ const api = axios.create({
   baseURL: process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000",
   headers: {
     "Content-Type": "application/json",
-    "x-app-type": process.env.APP_TYPE || "dac-dashboard",
+    "x-app-type": process.env.APP_TYPE || "dashboard-app",
   },
 });
 
@@ -74,9 +74,10 @@ api.interceptors.response.use(
         const cookie = await getSession();
         if (!cookie) throw new Error("No session");
 
-        const res = await axios.post(
+        const res = await api.post(
           `${process.env.NEXT_PUBLIC_API_URL}/auth/refresh-token`,
           { refresh_token: cookie },
+          
         );
 
         const newToken = res.data.data.access_token;

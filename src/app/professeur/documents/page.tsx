@@ -160,7 +160,7 @@ export default function PageDocuments() {
   };
 
   return (
-    <AppLayout>
+    <AppLayout  title={""} subtitle={""}>
       <main className="flex-1 flex flex-col overflow-hidden">
         {/* SEARCH & FILTER */}
         <div className="flex space-x-4 mb-6">

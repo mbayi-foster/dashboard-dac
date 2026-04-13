@@ -147,7 +147,7 @@ export default function PageMesCours() {
   );
 
   return (
-    <AppLayout>
+    <AppLayout title={""} subtitle={""}>
       <main className="flex-1 overflow-y-auto p-8">
         {/* Top Search & Filter Bar */}
         <div className="flex flex-col sm:flex-row gap-4 mb-8">

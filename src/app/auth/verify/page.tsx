@@ -1,5 +1,5 @@
 "use client"
-import VerifyCodeForm from "@/components/auth/VerifyCodeForm";
+
 import { GraduationCap, ArrowLeft } from "lucide-react";
 import Image from "next/image";
 import { useRef, useState } from "react";
@@ -122,7 +122,9 @@ export default function VerifyPage() {
                     type="text"
                     maxLength={1}
                     value={digit}
-                    ref={(el) => (inputsRef.current[index] = el)}
+                    ref={(el) => {
+                      inputsRef.current[index] = el;
+                    }}
                     onChange={(e) => handleChange(e.target.value, index)}
                     onKeyDown={(e) => handleKeyDown(e, index)}
                     className="w-12 h-12 text-center border rounded text-lg focus:outline-blue-500"

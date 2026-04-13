@@ -1,5 +1,4 @@
 "use client"
-import CreateNewPassword from "@/components/auth/CreateNewPassword";
 import Image from "next/image";
 import LogoDac from "@/assets//images/favicon.svg";
 import { ArrowLeft, ArrowRightCircle, CheckCircle, Eye, EyeOff, GraduationCap } from "lucide-react";

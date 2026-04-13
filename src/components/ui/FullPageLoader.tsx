@@ -9,7 +9,7 @@ interface FullPageLoaderProps {
 
 export default function FullPageLoader({ message = "Chargement en cours...", loading = false }: FullPageLoaderProps) {
   return (
-    <div className={loading ? "fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-white/80 backdrop-blur-sm" : "hidden"}>
+    <div className={loading ? "fixed inset-0 z-50 flex flex-col items-center justify-center bg-white/80 backdrop-blur-sm" : "hidden"}>
       <div className="relative flex items-center justify-center">
         {/* Cercle extérieur animé */}
         <motion.div

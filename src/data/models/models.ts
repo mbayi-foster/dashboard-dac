@@ -5,11 +5,12 @@ export interface User {
   postnom: string;
   matricule?: string;
   email: string;
-  phone: string;
-  status: UserStatus;
+  telephone: string;
+  status: string;
   sexe: Sexe;
   roles: Role[];
   created_at: Date;
+  university_id:number
 }
 
 export interface Role {
@@ -20,14 +21,9 @@ export interface Role {
   created_at: Date;
 }
 
-export enum UserStatus {
-  EN_COURS,
-  ACTIVE,
-  DESACTIVE,
-  SUPPRIME,
-}
+
 
 export enum Sexe {
-  MALE,
-  FEMALE,
+  MALE = "MALE",
+  FEMALE = "FEMALE",
 }

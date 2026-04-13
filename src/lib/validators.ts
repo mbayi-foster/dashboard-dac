@@ -1,3 +1,4 @@
+import { Sexe } from "@/data/models/models";
 import * as z from "zod";
 
 export type FormState =
@@ -16,11 +17,6 @@ export const LoginFormSchema = z.object({
   password: z.string().min(6).max(100),
 });
 
-enum Sexe {
-  MALE = "MALE",
-  FEMALE = "FEMALE",
-}
-
 export const CreateUserFormSchema = z.object({
   nom: z
     .string()
@@ -38,7 +34,7 @@ export const CreateUserFormSchema = z.object({
     .max(50, { message: "Le prénom ne peut pas dépasser 50 caractères" })
     .trim(),
   email: z.email({ error: "Veillez entrer une adresse email valide" }).trim(),
-  sexe: z.enum(Sexe, {message: "Le genre doit être sélectionné"}),
+  sexe: z.enum(Sexe, { message: "Le genre doit être sélectionné" }).default(Sexe.MALE),
   telephone: z
     .string()
     .min(10, {
@@ -47,8 +43,13 @@ export const CreateUserFormSchema = z.object({
     .max(15, {
       message: "Le numéro de téléphone ne peut pas dépasser 15 chiffres",
     })
-    .trim(),
-  roles: z
-    .array(z.number())
-    .min(1, { message: "Veuillez sélectionner au moins un rôle" }),
+    .trim()
+    .nullable(),
+  roles: z.array(z.number()).min(1, { message: "Veuillez sélectionner au moins un rôle" }),
+});
+
+export const ChangeUserStatusFormSchema = z.object({
+  status: z.enum(["EN_COURS", "ACTIVE", "DISABLED", "SUPPRIME"], {
+    message: "Viellez choisir un status valide.",
+  }),
 });
